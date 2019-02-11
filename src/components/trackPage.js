@@ -23,6 +23,9 @@ export default class TrackPage extends Component {
             <li>
               <a href={track.artistViewUrl}>Visit artist page</a>
             </li>
+            <li>
+              <a href={track.trackViewUrl}>Visit track page</a>
+            </li>
           </ul>
           <div />
         </div>
