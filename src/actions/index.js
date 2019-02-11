@@ -5,3 +5,7 @@ export function fetchData() {
 export function addTracks(tracks) {
   return { trackListing: [...tracks.results], loading: false };
 }
+
+export function showTrack(track) {
+  return { showingTrack: track };
+}
