@@ -1,5 +1,7 @@
-import { BEGIN_DATA_FETCH } from "./action-types";
+export function fetchData() {
+  return { loading: true };
+}
 
-export function fetchData(state) {
-  return { ...state, loading: true };
+export function addTracks(tracks) {
+  return { trackListing: [...tracks.results], loading: false };
 }
