@@ -8,7 +8,11 @@ import { Provider } from "react-redux";
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {
-  return { trackListing: state.trackListing, loading: state.loading };
+  return {
+    trackListing: state.trackListing,
+    loading: state.loading,
+    showingTrack: state.showingTrack
+  };
 };
 
 const mapDispatchToProps = dispatch => ({
