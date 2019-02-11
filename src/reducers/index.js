@@ -7,7 +7,10 @@ const initialState = {
 function rootReducer(state = initialState, action) {
   switch (action.type) {
     case "BEGIN_DATA_FETCH":
-      return actions.fetchData(state);
+      return { ...state, ...actions.fetchData() };
+    case "SUCCESS_DATA_FETCH":
+      console.log("SUCCESS_DATA_FETCH");
+      return { ...state, ...actions.addTracks(action.payload) };
     default:
       return state;
   }

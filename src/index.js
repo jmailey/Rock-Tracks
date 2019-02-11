@@ -12,7 +12,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  FetchData: () => dispatch({ type: "BEGIN_DATA_FETCH" })
+  fetchData: () => dispatch({ type: "BEGIN_DATA_FETCH" }),
+  onSuccess: data => dispatch({ type: "SUCCESS_DATA_FETCH", payload: data })
 });
 
 const RockTracks = connect(
