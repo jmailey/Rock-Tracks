@@ -1,7 +1,8 @@
 import * as actions from "../actions/index";
 const initialState = {
   trackListing: [],
-  loading: false
+  loading: false,
+  showingTrack: false
 };
 
 function rootReducer(state = initialState, action) {
@@ -9,8 +10,10 @@ function rootReducer(state = initialState, action) {
     case "BEGIN_DATA_FETCH":
       return { ...state, ...actions.fetchData() };
     case "SUCCESS_DATA_FETCH":
-      console.log("SUCCESS_DATA_FETCH");
       return { ...state, ...actions.addTracks(action.payload) };
+    case "SHOW_TRACK":
+      return { ...state, ...actions.showTrack(action.payload) };
+
     default:
       return state;
   }
