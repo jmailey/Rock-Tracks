@@ -1,7 +1,22 @@
 import React, { Component } from "react";
 import "./App.css";
 import axios from "axios";
-import TrackList from "./components/tracks";
+import TrackList from "./components/tracksList";
+import TrackPage from "./components/trackPage";
+import { connect } from "react-redux";
+
+const mapStateToProps = state => {
+  return { showingTrack: state.showingTrack };
+};
+
+const mapDispatchToProps = dispatch => ({
+  back: track => dispatch({ type: "SHOW_TRACK", payload: false })
+});
+
+const Page = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TrackPage);
 
 class App extends Component {
   componentDidMount() {
@@ -13,6 +28,9 @@ class App extends Component {
   }
 
   render() {
+    if (this.props.showingTrack) {
+      return <Page />;
+    }
     return (
       <div className="App">
         <header>
