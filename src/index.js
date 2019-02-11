@@ -5,10 +5,23 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import store from "./store/index";
 import { Provider } from "react-redux";
+import { connect } from "react-redux";
 
+const mapStateToProps = state => {
+  return { trackListing: state.trackListing, loading: state.loading };
+};
+
+const mapDispatchToProps = dispatch => ({
+  FetchData: () => dispatch({ type: "BEGIN_DATA_FETCH" })
+});
+
+const RockTracks = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <RockTracks />
   </Provider>,
   document.getElementById("root")
 );
