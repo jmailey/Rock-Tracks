@@ -1,8 +1,15 @@
+import * as actions from "../actions/index";
 const initialState = {
-  trackListing: []
+  trackListing: [],
+  loading: false
 };
 
 function rootReducer(state = initialState, action) {
-  return state;
+  switch (action.type) {
+    case "BEGIN_DATA_FETCH":
+      return actions.fetchData(state);
+    default:
+      return state;
+  }
 }
 export default rootReducer;
