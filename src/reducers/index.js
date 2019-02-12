@@ -13,7 +13,8 @@ function rootReducer(state = initialState, action) {
       return { ...state, ...actions.addTracks(action.payload) };
     case "SHOW_TRACK":
       return { ...state, ...actions.showTrack(action.payload) };
-
+    case "SHOW_ALL_TRACKS":
+      return { ...state, ...actions.showAllTracks() };
     default:
       return state;
   }
