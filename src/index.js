@@ -17,13 +17,15 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   fetchData: () => dispatch({ type: "BEGIN_DATA_FETCH" }),
-  onSuccess: data => dispatch({ type: "SUCCESS_DATA_FETCH", payload: data })
+  onSuccess: data => dispatch({ type: "SUCCESS_DATA_FETCH", payload: data }),
+  back: () => dispatch({ type: "SHOW_TRACK", payload: false })
 });
 
 const RockTracks = connect(
   mapStateToProps,
   mapDispatchToProps
 )(App);
+
 ReactDOM.render(
   <Provider store={store}>
     <RockTracks />
