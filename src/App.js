@@ -1,22 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
 import axios from "axios";
-import TrackList from "./components/tracksList";
-import TrackPage from "./components/trackPage";
-import { connect } from "react-redux";
-
-const mapStateToProps = state => {
-  return { showingTrack: state.showingTrack };
-};
-
-const mapDispatchToProps = dispatch => ({
-  back: track => dispatch({ type: "SHOW_TRACK", payload: false })
-});
-
-const Page = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(TrackPage);
+import TrackList from "./components/tracksContainer";
+import TrackPage from "./components/trackPageContainer";
 
 class App extends Component {
   componentDidMount() {
@@ -29,18 +15,14 @@ class App extends Component {
 
   render() {
     if (this.props.showingTrack) {
-      return <Page />;
+      return <TrackPage />;
     }
     return (
       <div className="App">
         <header>
           <h1>Rock Tracks</h1>
         </header>
-        {this.props.loading ? (
-          "loading..."
-        ) : (
-          <TrackList tracks={this.props.trackListing} />
-        )}
+        {this.props.loading ? "loading..." : <TrackList />}
       </div>
     );
   }
