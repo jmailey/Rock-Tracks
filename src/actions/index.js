@@ -9,3 +9,7 @@ export function addTracks(tracks) {
 export function showTrack(track) {
   return { showingTrack: track };
 }
+
+export function showAllTracks() {
+  return { showingTrack: false };
+}
