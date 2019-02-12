@@ -21,10 +21,22 @@ export default class TrackPage extends Component {
             </li>
             <li>released : {track.releaseDate}</li>
             <li>
-              <a href={track.artistViewUrl}>Visit artist page</a>
+              <a
+                href={track.artistViewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit artist page
+              </a>
             </li>
             <li>
-              <a href={track.trackViewUrl}>Visit track page</a>
+              <a
+                href={track.trackViewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit track page
+              </a>
             </li>
           </ul>
           <div />
