@@ -1,5 +1,5 @@
 import * as actions from "../actions/index";
-const initialState = {
+export const initialState = {
   trackListing: [],
   loading: false,
   showingTrack: false
