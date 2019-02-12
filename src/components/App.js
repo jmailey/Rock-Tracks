@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "./App.css";
+import "../index.css";
 import axios from "axios";
-import TrackList from "./components/tracksContainer";
-import TrackPage from "./components/trackPageContainer";
+import TrackList from "./tracksContainer";
+import TrackPage from "./trackPageContainer";
 
 class App extends Component {
   componentDidMount() {

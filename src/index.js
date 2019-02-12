@@ -1,30 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import RockTracks from "./components/AppContainer";
 import * as serviceWorker from "./serviceWorker";
 import store from "./store/index";
 import { Provider } from "react-redux";
-import { connect } from "react-redux";
-
-const mapStateToProps = state => {
-  return {
-    trackListing: state.trackListing,
-    loading: state.loading,
-    showingTrack: state.showingTrack
-  };
-};
-
-const mapDispatchToProps = dispatch => ({
-  fetchData: () => dispatch({ type: "BEGIN_DATA_FETCH" }),
-  onSuccess: data => dispatch({ type: "SUCCESS_DATA_FETCH", payload: data }),
-  back: () => dispatch({ type: "SHOW_ALL_TRACKS" })
-});
-
-const RockTracks = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
 
 ReactDOM.render(
   <Provider store={store}>
