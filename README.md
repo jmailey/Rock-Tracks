@@ -1,6 +1,7 @@
 ## Quick start
 
 - Clone the repo: git clone https://github.com/jmailey/Rock-Tracks.git
+- cd Rock-Tracks
 - yarn install
 - yarn test
 - yarn start
