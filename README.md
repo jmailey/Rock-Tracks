@@ -11,3 +11,4 @@
 
 - Introduce React-Router for url parameters
 - Introduce Enzyme to test Components
+- Allow users to search by artist and title.
