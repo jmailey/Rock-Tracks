@@ -39,10 +39,9 @@ export default class TrackPage extends Component {
               </a>
             </li>
           </ul>
+          <audio src={track.previewUrl} controls />
           <div />
         </div>
-        <p>Preview</p>
-        <audio src={track.previewUrl} controls />
       </div>
     );
   }

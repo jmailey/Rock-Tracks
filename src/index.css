@@ -25,11 +25,11 @@ code {
 
 .track {
   border: 1px solid #e5e5e5;
-  padding: 12px 14px;
   margin: 14px;
-  width: 160px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
     0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  width: 100%;
+  padding: 12px 14px;
 }
 
 ul {
@@ -38,14 +38,15 @@ ul {
 
 .track li {
   list-style: none;
-  padding: none;
+  margin-bottom: 6px;
 }
 
-.track button {
-  cursor: pointer;
+button {
+  border: 1px solid #e5e5e5;
+  padding: 12px 14px;
+  background-color: #fff;
   font-size: 14px;
-  background-color: #f2f2f2;
-  border-radius: 5px;
+  cursor: pointer;
 }
 
 .back {
@@ -53,15 +54,28 @@ ul {
 }
 
 .trackpage {
-  display: flex;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 12px 14px;
+  margin: 12px auto;
+  width: 100%;
+  text-align: center;
 }
 
 .trackpage .track {
-  width: 400px;
   text-align: center;
+  padding: 12px 14px;
+  width: 80%;
+  margin: 12px auto;
+}
+
+@media only screen and (min-width: 430px) {
+  .track {
+    width: 160px;
+  }
+
+  .trackpage {
+    width: 80%;
+  }
+
+  .trackpage .track {
+    width: 400px;
+  }
 }
