@@ -8,7 +8,9 @@ class App extends Component {
   componentDidMount() {
     this.props.fetchData();
     axios
-      .get("https://itunes.apple.com/search?term=rock&media=music")
+      .get(
+        "https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=rock&media=music"
+      )
       .then(response => this.props.onSuccess(response.data))
       .catch(error => console.log(error));
   }
